@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace MEFNTService
 {
-    public partial class Service1 : ServiceBase
+    public partial class NTService : ServiceBase
     {
-        public Service1()
+        public NTService()
         {
             InitializeComponent();
         }
