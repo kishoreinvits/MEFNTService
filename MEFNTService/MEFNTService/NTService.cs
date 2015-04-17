@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
-using System.Data;
-using System.Diagnostics;
 using System.Configuration;
-using System.Linq;
 using System.Reflection;
 using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MEFNTService
 {
@@ -24,10 +17,6 @@ namespace MEFNTService
 
         protected override void OnStart(string[] args)
         {
-            if (ConfigurationManager.AppSettings["isDebugging"].ToUpper().Equals("TRUE"))
-            {
-                Debugger.Break(); 
-            }
             StartService();
         }
 
@@ -59,6 +48,13 @@ namespace MEFNTService
 
         protected override void OnStop()
         {
+        }
+
+        internal void TestStartupAndStop(string[] args)
+        {
+            this.OnStart(args);
+            Console.ReadLine();
+            this.OnStop();
         }
     }
 }
