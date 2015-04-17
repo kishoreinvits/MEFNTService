@@ -24,6 +24,10 @@ namespace MEFNTService
 
         protected override void OnStart(string[] args)
         {
+            if (ConfigurationManager.AppSettings["isDebugging"].ToUpper().Equals("TRUE"))
+            {
+                Debugger.Break(); 
+            }
             StartService();
         }
 
