@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Diagnostics;
 using System.ServiceProcess;
 
@@ -11,7 +12,8 @@ namespace MEFNTService
         /// </summary>
         static void Main()
         {
-            //We can use if (Environment.UserInteractive) and change application type, but I feel this is more convenient. Strictly my personal choice
+            //We can use if (Environment.UserInteractive) and change application type, but I feel this is more convenient. 
+            //Strictly my personal choice. You can use console class if you change application Type
             if (ConfigurationManager.AppSettings["isDebugging"].ToUpper().Equals("TRUE"))
             {
                 Debugger.Break();

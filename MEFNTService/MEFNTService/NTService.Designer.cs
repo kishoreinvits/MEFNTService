@@ -1,4 +1,7 @@
-﻿namespace MEFNTService
+﻿using System.Collections.Generic;
+using ExtensionComponentBase;
+
+namespace MEFNTService
 {
     partial class NtService
     {
