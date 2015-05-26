@@ -1,6 +1,6 @@
 ﻿namespace MEFNTService
 {
-    partial class NTService
+    partial class NtService
     {
         /// <summary> 
         /// Required designer variable.

@@ -2,15 +2,16 @@
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.Configuration;
+using System.IO;
 using System.Reflection;
 using System.ServiceProcess;
 
 namespace MEFNTService
 {
-    public partial class NTService : ServiceBase
+    public partial class NtService : ServiceBase
     {
         private CompositionContainer _container;
-        public NTService()
+        public NtService()
         {
             InitializeComponent();
         }
@@ -25,24 +26,32 @@ namespace MEFNTService
             //An aggregate catalog that combines multiple catalogs
             var catalog = new AggregateCatalog();
             //Adds all the parts found in the same assembly as the Program class
-            string ExtensionFolder = 
-                string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["ExtensionFolder"]) 
-                ? Assembly.GetExecutingAssembly().Location 
-                : ConfigurationManager.AppSettings["ExtensionFolder"];
-            
-            catalog.Catalogs.Add(new DirectoryCatalog(ExtensionFolder));
+            var extensionFolder = 
+                Path.GetDirectoryName(
+                string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["ExtensionFolder"])
+                ? Assembly.GetExecutingAssembly().Location
+                : ConfigurationManager.AppSettings["ExtensionFolder"]);
 
-            //Create the CompositionContainer with the parts in the catalog
-            _container = new CompositionContainer(catalog);
-
-            //Fill the imports of this object
-            try
+            if (extensionFolder != null)
             {
-                this._container.ComposeParts(this);
+                catalog.Catalogs.Add(new DirectoryCatalog(extensionFolder));
+
+                //Create the CompositionContainer with the parts in the catalog
+                _container = new CompositionContainer(catalog);
+
+                //Fill the imports of this object
+                try
+                {
+                    _container.ComposeParts(this);
+                }
+                catch (CompositionException compositionException)
+                {
+                    Console.WriteLine(compositionException.ToString());
+                }
             }
-            catch (CompositionException compositionException)
+            else
             {
-                Console.WriteLine(compositionException.ToString());
+                throw new Exception("Extension folder is null/invalid.");
             }
         }
 
@@ -50,11 +59,12 @@ namespace MEFNTService
         {
         }
 
-        internal void TestStartupAndStop(string[] args)
+        internal void DebugStartupAndStop(string[] args)
         {
-            this.OnStart(args);
+            OnStart(args);
+            Console.WriteLine("Service Started! Press [ENTER] to stop...");
             Console.ReadLine();
-            this.OnStop();
+            OnStop();
         }
     }
 }

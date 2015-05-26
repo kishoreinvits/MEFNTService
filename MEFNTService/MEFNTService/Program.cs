@@ -16,18 +16,17 @@ namespace MEFNTService
             {
                 Debugger.Break();
                 //If you are passing any argumrnts to your service, Initialize here
-                string[] args=new string[]{"DummyArg1"};
-                NTService service1 = new NTService();
-                service1.TestStartupAndStop(args);
+                var args=new[]{"DummyArg1"};
+                var service = new NtService();
+                service.DebugStartupAndStop(args);
             }
             else
             {
-                ServiceBase[] ServicesToRun;
-                ServicesToRun = new ServiceBase[] 
+                var servicesToRun = new ServiceBase[] 
                 { 
-                    new NTService() 
+                    new NtService() 
                 };
-                ServiceBase.Run(ServicesToRun);
+                ServiceBase.Run(servicesToRun);
             }
         }
     }
