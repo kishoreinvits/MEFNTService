@@ -37,6 +37,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.ServiceProcess" />
   </ItemGroup>
   <ItemGroup>
@@ -67,13 +68,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExtensionComponent1\ExtensionComponent1.csproj">
-      <Project>{4820e794-f826-41f7-ab65-703365762ea3}</Project>
-      <Name>ExtensionComponent1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ExtensionComponent2\ExtensionComponent2.csproj">
-      <Project>{ddae4760-9c12-4528-a2cc-937fb99eff0f}</Project>
-      <Name>ExtensionComponent2</Name>
+    <ProjectReference Include="..\ExtensionComponents\ExtensionComponents.csproj">
+      <Project>{108f1cc1-a1bf-4207-85fc-d495b2863371}</Project>
+      <Name>ExtensionComponents</Name>
     </ProjectReference>
     <ProjectReference Include="..\ExtensionComponent\ExtensionComponentBase.csproj">
       <Project>{ae2cdd2f-548b-4de8-89bf-89574d00c88e}</Project>

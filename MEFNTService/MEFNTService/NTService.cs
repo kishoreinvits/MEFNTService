@@ -7,6 +7,7 @@ using System.IO;
 using System.Reflection;
 using System.ServiceProcess;
 using ExtensionComponentBase;
+using System.Diagnostics;
 
 namespace MEFNTService
 {
@@ -83,10 +84,11 @@ namespace MEFNTService
 
         internal void DebugStartupAndStop(string[] args)
         {
+            Trace.WriteLine("Service Starting...");
             OnStart(args);
-            Console.WriteLine("Service Started! Press [ENTER] to stop...");
-            Console.ReadLine();
+            Trace.WriteLine("Service Started!");
             OnStop();
+            Trace.WriteLine("Service Stopped!");
         }
     }
 }
