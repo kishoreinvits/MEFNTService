@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEFNTService", "MEFNTServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionComponentBase", "ExtensionComponent\ExtensionComponentBase.csproj", "{AE2CDD2F-548B-4DE8-89BF-89574D00C88E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionComponents", "ExtensionComponents\ExtensionComponents.csproj", "{108F1CC1-A1BF-4207-85FC-D495B2863371}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionComponents", "ExtensionComponents\ExtensionComponents.csproj", "{363A1704-1E82-4319-A274-3D3397D13ED1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{AE2CDD2F-548B-4DE8-89BF-89574D00C88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE2CDD2F-548B-4DE8-89BF-89574D00C88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE2CDD2F-548B-4DE8-89BF-89574D00C88E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{108F1CC1-A1BF-4207-85FC-D495B2863371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{108F1CC1-A1BF-4207-85FC-D495B2863371}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{108F1CC1-A1BF-4207-85FC-D495B2863371}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{108F1CC1-A1BF-4207-85FC-D495B2863371}.Release|Any CPU.Build.0 = Release|Any CPU
+		{363A1704-1E82-4319-A274-3D3397D13ED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{363A1704-1E82-4319-A274-3D3397D13ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{363A1704-1E82-4319-A274-3D3397D13ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{363A1704-1E82-4319-A274-3D3397D13ED1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

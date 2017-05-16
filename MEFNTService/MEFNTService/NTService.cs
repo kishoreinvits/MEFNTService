@@ -14,7 +14,6 @@ namespace MEFNTService
     public partial class NtService : ServiceBase
     {
         [ImportMany(typeof(IExtensionComponent))]
-
         private IEnumerable<IExtensionComponent> Components;
 
         public NtService()
